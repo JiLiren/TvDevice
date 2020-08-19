@@ -19,13 +19,13 @@ public class TvDevicePlugin implements FlutterPlugin, MethodCallHandler {
 
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
-    channel = new MethodChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "TvDevice");
+    channel = new MethodChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "com.awesome.TvDevice");
     channel.setMethodCallHandler(this);
   }
 
   public static void registerWith(Registrar registrar) {
     TvDevicePlugin.registrar = registrar;
-    final MethodChannel channel = new MethodChannel(registrar.messenger(), "TvDevice");
+    final MethodChannel channel = new MethodChannel(registrar.messenger(), "com.awesome.TvDevice");
     channel.setMethodCallHandler(new TvDevicePlugin());
   }
 
